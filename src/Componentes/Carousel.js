@@ -15,11 +15,6 @@ const items = [
     altText: 'Slide 2',
     header: 'Slide 2 Header'
   },
-  {
-    src: foto2,
-    altText: 'Slide 3',
-    header: 'Slide 3 Header'
-  }
 ];
 
 const Example = () => <UncontrolledCarousel items={items} />;

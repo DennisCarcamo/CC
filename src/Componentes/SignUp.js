@@ -1,4 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import NavBar from "./Navbar.js";
+import Footer from "./Footer";
+import fire from "../config/Fire";
+
+import SingIn from "./SignIn";
 import {
   Card,
   Col,
@@ -9,11 +15,46 @@ import {
   Input,
   FormText
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import NavBar from "./Navbar.js";
-import Footer from "./Footer";
-import SingIn from "./SignIn";
+
 export default class SignInForm extends React.Component {
+  constructor(props) {
+    super(props);
+   this.state = {
+      nombre: "",
+      apellido: "",
+      username: "",
+      email: "",
+      password: "",
+      confirContrasena: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.createUser = this.createUser.bind(this);
+  }
+
+  createUser() {
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password).then(u => {
+        console.log("usuariocreado");
+      })
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == "auth/weak-password") {
+          alert("The password is too weak.");
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(e.target.value);
+  }
+
   render() {
     return (
       <div>
@@ -31,10 +72,12 @@ export default class SignInForm extends React.Component {
                 </Label>
                 <Col sm={8}>
                   <Input
-                    type="nombre"
+                    type="text"
                     name="nombre"
                     id="nombre"
                     placeholder="Ingrese su nombre"
+                    value={this.state.nombre}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
@@ -48,6 +91,8 @@ export default class SignInForm extends React.Component {
                     name="apellido"
                     id="apellido"
                     placeholder="Ingrese su Apellido"
+                    value={this.state.apellido}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
@@ -61,6 +106,8 @@ export default class SignInForm extends React.Component {
                     name="username"
                     id="username"
                     placeholder="Ingrese su Nombre de Usuario"
+                    value={this.state.username}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
@@ -70,10 +117,12 @@ export default class SignInForm extends React.Component {
                 </Label>
                 <Col sm={8}>
                   <Input
-                    type="correo"
-                    name="correo"
-                    id="correo"
+                    type="email"
+                    name="email"
+                    id="email"
                     placeholder="Ingrese su Correo"
+                    value={this.state.email}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
@@ -83,10 +132,13 @@ export default class SignInForm extends React.Component {
                 </Label>
                 <Col sm={8}>
                   <Input
+                    autoComplete=""
                     type="password"
                     name="password"
                     id="password"
                     placeholder="************"
+                    value={this.state.contrasena}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
@@ -96,16 +148,21 @@ export default class SignInForm extends React.Component {
                 </Label>
                 <Col sm={8}>
                   <Input
+                    autoComplete=""
                     type="password"
-                    name="password"
-                    id="password"
+                    name="confirContrasena"
+                    id="confirContrasena"
                     placeholder="************"
+                    value={this.state.confirContrasena}
+                    onChange={this.handleChange}
                   />
                 </Col>
               </FormGroup>
               <FormGroup check row>
                 <Col sm={{ size: 10, offset: 0 }}>
-                  <Button>Confirmar</Button>{" "}
+                  <Button type="submit" onClick={this.createUser}>
+                    Confirmar
+                  </Button>{" "}
                   <Button>
                     <Link to={"/SignIn.js/"}>Ya tengo cuenta</Link>
                   </Button>

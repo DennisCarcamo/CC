@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import Content from './Componentes/Content';
 import fire from "./config/Fire";
 import Login from "./Componentes/SignIn";
+import UserMainPg from "./Componentes/UserMainPg"
+import SignUp from "./Componentes/SignUp"
 
 
 class App extends Component {
@@ -15,6 +17,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { user: null };
+  }
+
+  logout(){
+    
   }
 
   componentDidMount() {
@@ -36,7 +42,7 @@ class App extends Component {
     const {children} = this.props;
     return (
       <div className="App">
-       {this.state.user ?  <Content body ={children}/> : <Login/> }
+       {this.state.user ?   <UserMainPg/> : <Login/> }
       </div>
     );
   }
