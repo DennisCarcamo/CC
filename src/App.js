@@ -19,9 +19,6 @@ class App extends Component {
     this.state = { user: null };
   }
 
-  logout(){
-    
-  }
 
   componentDidMount() {
     this.authListener();

@@ -55,7 +55,7 @@ export default class SignInForm extends React.Component {
             <Form>
               <FormGroup row>
                 <Label for="Nombre de Usuario" sm={4}>
-                  Nombre de Usuario
+                  Correo
                 </Label>
                 <Col sm={8}>
                   <Input
@@ -88,10 +88,14 @@ export default class SignInForm extends React.Component {
 
               <FormGroup check row>
                 <Col sm={{ size: 10, offset: 0 }}>
-                  <Button size="sm" type="submit" onClick={this.login}>Confirmar</Button>{" "}
+                  <Button size="sm" type="submit" onClick={this.login}>
+                    Confirmar
+                  </Button>{" "}
                   <Button size="sm">
                     <Link to={"/SingUp.js/"}> Crear Cuenta </Link>
                   </Button>
+                  <br/><br/>
+                  <Button size="sm">Sign in with Google</Button>
                 </Col>
               </FormGroup>
             </Form>
