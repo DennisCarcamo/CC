@@ -8,5 +8,7 @@ const config = {
   storageBucket: "connectedcar-12d9e.appspot.com",
   messagingSenderId: "602582701044"
 };
+
 const fire = firebase.initializeApp(config);
 export default fire;
+export const googleProvider = new firebase.auth.GoogleAuthProvider();

@@ -4,6 +4,8 @@ import NavBar from "./Navbar.js";
 import Footer from "./Footer";
 import SingUp from "./SignUp";
 import fire from "../config/Fire";
+import firebase from 'firebase';
+
 
 import {
   Card,
@@ -15,17 +17,35 @@ import {
   Input,
   FormText
 } from "reactstrap";
+const firebaseAuthKey = "firebaseAuthInProgress";
 
 export default class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleGoogleLogin = this.handleGoogleLogin.bind(this);
+
     this.state = {
       email: "",
       password: ""
     };
   }
+
+  handleGoogleLogin() {
+    let provider = new firebase.auth.GoogleAuthProvider();
+
+    provider.addScope("profile");
+    provider.addScope("email");
+
+    fire
+      .auth()
+      .signInWithPopup(provider)
+      .then(result => {
+        console.log(result);
+      });
+  }
+
   login(e) {
     e.preventDefault();
     fire
@@ -47,6 +67,7 @@ export default class SignInForm extends React.Component {
       <div>
         <NavBar />
         <br />
+        <h1>this is the login</h1>
         <br />
         <div
           style={{ border: "thin", display: "flex", justifyContent: "center" }}
@@ -94,8 +115,15 @@ export default class SignInForm extends React.Component {
                   <Button size="sm">
                     <Link to={"/SingUp.js/"}> Crear Cuenta </Link>
                   </Button>
-                  <br/><br/>
-                  <Button size="sm">Sign in with Google</Button>
+                  <br />
+                  <br />
+                  <Button
+                    onClick={this.handleGoogleLogin}
+                    size="sm"
+                    color="danger"
+                  >
+                    Entrar con Google
+                  </Button>
                 </Col>
               </FormGroup>
             </Form>
