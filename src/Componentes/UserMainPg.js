@@ -1,7 +1,7 @@
 import React from "react";
 import Carouse from "./Carousel";
 import fire from "../config/Fire";
-
+import NavbarLogout from './NavbarLogout';
 
 export default class UserMainPg extends React.Component {
   constructor(props) {
@@ -21,6 +21,7 @@ export default class UserMainPg extends React.Component {
   render() {
     return (
       <div id="UserMainPgroot">
+      <NavbarLogout/>
         <h1>This is the User Page</h1>
         <Carouse />
         <button onClick={this.signOutUser}>Log out</button>

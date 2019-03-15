@@ -91,7 +91,7 @@ export default class Automoviles extends Component{
         let cards = this.state.cars.map(carss => {
             return (
               <Col sm="3">
-                <CardsBikes carss={carss} />
+                <Cards carss={carss} />
                 <br />
               </Col>
             );

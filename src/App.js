@@ -9,7 +9,7 @@ import UserMainPg from "./Componentes/UserMainPg";
 import SignUp from "./Componentes/SignUp";
 import Navbar from "./Componentes/Navbar";
 //import Navbarlog from "./Componentes/NavbarLog";
-//import NavbarLogout from "./Componentes/NavbarLogout";
+import NavbarLogout from "./Componentes/NavbarLogout";
 import Automoviles from "./Componentes/Automoviles";
 import Bikes from "./Componentes/Bikes";
 import Homepage from "./Componentes/Homepage";
