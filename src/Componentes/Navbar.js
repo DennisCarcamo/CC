@@ -15,6 +15,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import * as routes from './Routes';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -41,10 +42,10 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to={"/SignIn.js/"}>SignIn &nbsp;</Link>
+                <Link to={routes.SignIn}>SignIn &nbsp;</Link>
               </NavItem>
               <NavItem>
-                <Link to={"/SingUp.js/"}>SignUp &nbsp;</Link>
+                <Link to={routes.SignUp}>SignUp &nbsp;</Link>
               </NavItem>
             </Nav>
           </Collapse>

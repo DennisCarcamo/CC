@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import NavBar from "./Navbar.js";
 import Footer from "./Footer";
 import fire from "../config/Fire";
+import * as routes from "./Routes";
+
+import "firebase/database";
 
 import SingIn from "./SignIn";
 import {
@@ -19,7 +22,7 @@ import {
 export default class SignInForm extends React.Component {
   constructor(props) {
     super(props);
-   this.state = {
+    this.state = {
       nombre: "",
       apellido: "",
       username: "",
@@ -29,12 +32,23 @@ export default class SignInForm extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.createUser = this.createUser.bind(this);
+    this.add_user = this.add_user.bind(this);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(event) {
+    this.add_user();
+  }
+
+  add_user() {
+    console.log(this.nombre);
   }
 
   createUser() {
     fire
       .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password).then(u => {
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(u => {
         console.log("usuariocreado");
       })
       .catch(function(error) {
@@ -58,7 +72,6 @@ export default class SignInForm extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
         <br />
         <br />
         <div
@@ -160,11 +173,11 @@ export default class SignInForm extends React.Component {
               </FormGroup>
               <FormGroup check row>
                 <Col sm={{ size: 10, offset: 0 }}>
-                  <Button type="submit" onClick={this.createUser}>
+                  <Button type="submit" onClick={this.onClick}>
                     Confirmar
                   </Button>{" "}
                   <Button>
-                    <Link to={"/SignIn.js/"}>Ya tengo cuenta</Link>
+                    <Link to={routes.SignIn}>Ya tengo cuenta</Link>
                   </Button>
                 </Col>
               </FormGroup>

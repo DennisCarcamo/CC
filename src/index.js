@@ -8,9 +8,7 @@ import Routes from './Componentes/Routes.js';
 import {HashRouter} from 'react-router-dom';
 ReactDOM.render(
     
-    <HashRouter>
-        <Routes/>
-    </HashRouter>
+    <App></App>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

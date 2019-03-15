@@ -4,7 +4,8 @@ import NavBar from "./Navbar.js";
 import Footer from "./Footer";
 import SingUp from "./SignUp";
 import fire from "../config/Fire";
-import firebase from 'firebase';
+import firebase from "firebase";
+import * as routes from './Routes';
 
 
 import {
@@ -34,10 +35,8 @@ export default class SignInForm extends React.Component {
 
   handleGoogleLogin() {
     let provider = new firebase.auth.GoogleAuthProvider();
-
     provider.addScope("profile");
     provider.addScope("email");
-
     fire
       .auth()
       .signInWithPopup(provider)
@@ -45,6 +44,8 @@ export default class SignInForm extends React.Component {
         console.log(result);
       });
   }
+
+  
 
   login(e) {
     e.preventDefault();
@@ -65,7 +66,6 @@ export default class SignInForm extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
         <br />
         <h1>this is the login</h1>
         <br />
@@ -113,7 +113,7 @@ export default class SignInForm extends React.Component {
                     Confirmar
                   </Button>{" "}
                   <Button size="sm">
-                    <Link to={"/SingUp.js/"}> Crear Cuenta </Link>
+                    <Link to={routes.SignUp}> Crear Cuenta </Link>
                   </Button>
                   <br />
                   <br />
