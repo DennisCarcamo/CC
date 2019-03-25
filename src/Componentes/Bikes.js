@@ -20,32 +20,32 @@ export default class UserMainPg extends React.Component {
       bikes: [
         {
           title: "Honda African Twin",
-          subtitle: "",
+          subtitle: "13$ por día",
           picture: icon1
         },
         {
           title: "Honda Gold Wing",
-          subtitle: "",
+          subtitle: "13$ por día",
           picture: icon2
         },
         {
           title: "Honda Monkey",
-          subtitle: "",
+          subtitle: "12$ por día",
           picture: icon3
         },
         {
           title: "Yamaha Tracer 900",
-          subtitle: "",
+          subtitle: "10$ por día",
           picture: icon4
         },
         {
           title: "Vespa",
-          subtitle: "",
+          subtitle: "8$ por día",
           picture: icon5
         },
         {
           title: "BMW R Nine Tracer",
-          subtitle: "",
+          subtitle: "20$ por día",
           picture: icon6
         }
       ]

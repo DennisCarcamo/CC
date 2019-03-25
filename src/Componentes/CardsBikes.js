@@ -16,7 +16,7 @@ class CardsBikes extends Component {
                     <CardBody>
                         <CardTitle>{this.props.bikess.title}</CardTitle>
                         <CardSubtitle>{this.props.bikess.subtitle}</CardSubtitle>
-                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                        <CardText></CardText>
                         <Button>Rentar</Button>
                     </CardBody>
                 </Card>

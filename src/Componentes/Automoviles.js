@@ -25,62 +25,62 @@ export default class Automoviles extends Component{
             cars: [
               {
                 title: "BMW X5",
-                subtitle: "",
+                subtitle: "50$ por día",
                 picture: icon10
               },
               {
                 title: "Ford Fiesta",
-                subtitle: "",
+                subtitle: "15$ por día",
                 picture: icon4
               },
               {
                 title: "Ford Focus",
-                subtitle: "",
+                subtitle: "20$ por día",
                 picture: icon9
               },
               {
                 title: "Honda Accord",
-                subtitle: "",
+                subtitle: "25$ por día",
                 picture: icon1
               },
               {
                 title: "Honda CRV",
-                subtitle: "",
+                subtitle: "35$ por día",
                 picture: icon5
               },
               {
                 title: "Honda HRV",
-                subtitle: "",
+                subtitle: "35$ por día",
                 picture: icon8
               },
               {
                 title: "Kia Sorento",
-                subtitle: "",
+                subtitle: "30$ por día",
                 picture: icon2
               },
               {
                 title: "Kia Picanto",
-                subtitle: "",
+                subtitle: "10$ por día",
                 picture: icon6
               },
               {
                 title: "Kia Rio",
-                subtitle: "",
+                subtitle: "20$ por día",
                 picture: icon3
               },
               {
                 title: "Mitsubishi ASX",
-                subtitle: "",
+                subtitle: "25$ por día",
                 picture: icon7
               },
               {
                 title: "Range Rover Evoque",
-                subtitle: "",
+                subtitle: "60$ por día",
                 picture: icon11
               },
               {
                 title: "Toyota Land Cruiser Prado",
-                subtitle: "",
+                subtitle: "40$ por día",
                 picture: icon12
               },
             ]

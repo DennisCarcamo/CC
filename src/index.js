@@ -6,7 +6,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Routes from './Componentes/Routes.js';
 import {HashRouter} from 'react-router-dom';
-const functions = require('firebase-functions');
+// The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
+//const functions = require('firebase-functions');
+
+// The Firebase Admin SDK to access the Firebase Realtime Database.
+//const admin = require('firebase-admin');
+//admin.initializeApp();
 
 
 ReactDOM.render(
